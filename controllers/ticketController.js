@@ -24,14 +24,15 @@ async function createTickt(req, res) {
 
     const user = req.user
 
-    const id = data['complains'].length + 1;
+    const ticketId = data['complains'].length + 1;
     const currentUser = user.currentUser
     const date = new Date().toLocaleDateString('en-CA');
     const email = user.userEmail
     const status = "Pending"
+    const userId = user.userId
 
 
-    const newTicket = {id, currentUser, email, title, complain, status, date}
+    const newTicket = {ticketId, userId, currentUser, email, title, complain, status, date}
 
      const theUser = data['users'].find((u)=> u.id === user.userId)
 
@@ -62,4 +63,44 @@ async function seeAllTicket(req, res) {
     
 }
 
-module.exports={createTickt, seeAllTicket}
+
+async function responds(req, res) {
+    const {id, check} = req.body;
+    const data = readDb();
+
+    const ticketExist = data['complains'].find((c) => c.ticketId === id);
+
+    if (!ticketExist) {
+        return res.status(404).json({
+            "success": false,
+            "message": "Ticket not found",
+        });
+    }
+
+    if(check === true){
+        ticketExist.status = "Processed";
+    }else{
+         ticketExist.status = "Pending";
+    }
+    
+    const theUser = data['users'].find((u) => u.id === ticketExist.userId);
+
+    res.status(200).json({
+        "success": true,
+        "message": "Complain processed successfully",
+        "data": ticketExist
+    });
+
+    const date = new Date().toLocaleDateString('en-CA');
+    const name = ticketExist.title;
+
+    data['users'][0].notifications.push({notification: `Complain ${name} with id:${ticketExist.ticketId} by ${ticketExist.userId} has been processed successfully on the ${date}`});
+
+    if (theUser) {
+        theUser.notifications.push({notification: `Your complain of ${name} has been processed successfully on the ${date}`});
+    }
+
+    writeDb(data);
+}
+
+module.exports={createTickt, seeAllTicket, responds}

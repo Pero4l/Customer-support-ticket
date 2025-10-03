@@ -16,6 +16,21 @@
         },
         {
           "notification": "A new complain form userKing was submitted at 2025-10-03"
+        },
+        {
+          "notification": "A new complain form user:King was submitted at 2025-10-03"
+        },
+        {
+          "notification": "A new complain form user:King was submitted at 2025-10-03"
+        },
+        {
+          "notification": "Complain WTF is worng with your site???? with id:1 by 2 has been processed successfully on the 2025-10-03"
+        },
+        {
+          "notification": "Complain WTF is worng with your site???? with id:1 by 2 has been processed successfully on the 2025-10-03"
+        },
+        {
+          "notification": "Complain WTF is worng with your site???? with id:1 by 2 has been processed successfully on the 2025-10-03"
         }
       ]
     },
@@ -32,16 +47,42 @@
         },
         {
           "notification": "Complain submitted successfully at 2025-10-03"
+        },
+        {
+          "notification": "Complain submitted successfully at 2025-10-03"
+        },
+        {
+          "notification": "Complain submitted successfully at 2025-10-03"
+        },
+        {
+          "notification": "Your complain of WTF is worng with your site???? has been processed successfully on the 2025-10-03"
+        },
+        {
+          "notification": "Your complain of WTF is worng with your site???? has been processed successfully on the 2025-10-03"
+        },
+        {
+          "notification": "Your complain of WTF is worng with your site???? has been processed successfully on the 2025-10-03"
         }
       ]
     }
   ],
   "complains": [
     {
-      "id": 1,
+      "ticketId": 1,
+      "userId": 2,
       "currentUser": "King",
       "title": "WTF is worng with your site????",
       "complain": "I am really not happy with your services like it is shit",
+      "status": "Processed",
+      "date": "2025-10-03"
+    },
+    {
+      "ticketId": 2,
+      "userId": 2,
+      "currentUser": "King",
+      "title": "WTF is worng with your site and app????",
+      "complain": "I am really not happy with your services like it is shit, the app is wack",
+      "status": "Pending",
       "date": "2025-10-03"
     }
   ]

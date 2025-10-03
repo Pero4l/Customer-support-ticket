@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "role": "admin",
+      "password": "$2b$12$d1WY4qmh1gQ.Qf2FjvnF.u9pCtlOzqmEsFfi4t1RyIXEeUMgCRF2u",
+      "date": "2025-10-03",
+      "notifications": [
+        {
+          "notification": "Account created successfully"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "King",
+      "email": "king@gmail.com",
+      "role": "user",
+      "password": "$2b$12$RzPxbRmyRQcI/6HeHlqahOEV.ogYoCIW.fgVgrIQuR.l2DT7oi4PG",
+      "date": "2025-10-03",
+      "notifications": [
+        {
+          "notification": "Account created successfully"
+        }
+      ]
+    }
+  ],
+
+  "complains": []
+}

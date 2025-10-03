@@ -4,12 +4,12 @@ const filePath = './data.json'
 
 function readDb(){
     try{
-        if(!fs.existsSync(filePath)) return {products: [], orders: [], users: []}
+        if(!fs.existsSync(filePath)) return {users: [], complains: []}
         const data = fs.readFileSync(filePath, "utf8");
         return JSON.parse(data)
     } catch (err){
         console.log("Error reading file:", err);
-        return {products: [], orders: [], users: []};
+        return {users: [], complains: []};
         
     }
 }

@@ -1,4 +1,4 @@
-const {readDb, writeDb} = require("../utils/")
+const {readDb, writeDb} = require("../utils/dbOperation")
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -40,7 +40,7 @@ async function register(req, res){
 
     const hashedPassword = await bcrypt.hash(password, 12)
     const id = data['users'].length + 1;
-    const role = "admin"
+    const role = "user"
     const date = new Date().toLocaleDateString('en-CA');
 
     const newUser = {id, name, email, role, password: hashedPassword, date, notifications: []}
@@ -57,6 +57,7 @@ async function register(req, res){
     });
 
 }
+
 
 
 // async function login(req, res) {
@@ -83,6 +84,5 @@ async function register(req, res){
 
 
 module.exports = {
-    register,
-    // login
+    register
 }

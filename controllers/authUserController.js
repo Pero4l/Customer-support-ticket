@@ -62,7 +62,7 @@ async function register(req, res){
 
 async function login(req, res) {
 
-    const token = jwt.sign({userId:req.data.id, role:req.data.role, currentUser:req.data.name}, process.env.JWT_SECRET, {expiresIn: '3h'})
+    const token = jwt.sign({userId:req.data.id, role:req.data.role, currentUser:req.data.name, userEmail:req.data.email}, process.env.JWT_SECRET, {expiresIn: '3h'})
 
     const userId = req.data.id
     const role = req.data.role

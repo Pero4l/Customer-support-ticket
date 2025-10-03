@@ -10,6 +10,12 @@
       "notifications": [
         {
           "notification": "Account created successfully"
+        },
+        {
+          "notification": "Complain submitted successfully at [object Object]"
+        },
+        {
+          "notification": "A new complain form userKing was submitted at 2025-10-03"
         }
       ]
     },
@@ -23,10 +29,20 @@
       "notifications": [
         {
           "notification": "Account created successfully"
+        },
+        {
+          "notification": "Complain submitted successfully at 2025-10-03"
         }
       ]
     }
   ],
-
-  "complains": []
+  "complains": [
+    {
+      "id": 1,
+      "currentUser": "King",
+      "title": "WTF is worng with your site????",
+      "complain": "I am really not happy with your services like it is shit",
+      "date": "2025-10-03"
+    }
+  ]
 }

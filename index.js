@@ -3,6 +3,7 @@ const app = express()
 app.use(express.json())
 
 const userAuth = require('./router/user.route')
+const ticket = require('./router/ticket.route')
 
 
 app.get('/',(req,res)=>{
@@ -13,6 +14,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/auth',userAuth)
+app.use('/ticket', ticket)
 
 
 const PORT = 4001

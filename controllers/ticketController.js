@@ -28,9 +28,10 @@ async function createTickt(req, res) {
     const currentUser = user.currentUser
     const date = new Date().toLocaleDateString('en-CA');
     const email = user.userEmail
+    const status = "Pending"
 
 
-    const newTicket = {id, currentUser, email, title, complain, date}
+    const newTicket = {id, currentUser, email, title, complain, status, date}
 
      const theUser = data['users'].find((u)=> u.id === user.userId)
 
@@ -49,4 +50,16 @@ async function createTickt(req, res) {
 }
 
 
-module.exports={createTickt}
+async function seeAllTicket(req, res) {
+     const data = readDb()
+    const allTicket = data['complains']
+
+    res.status(200).json({
+        "success": true,
+        "message": "Gotten all tickets successfully",
+        "data": allTicket
+    })
+    
+}
+
+module.exports={createTickt, seeAllTicket}
